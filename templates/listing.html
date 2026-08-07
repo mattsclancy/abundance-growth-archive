@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% import "_card.html" as cards %}
+{% block title %}{{ heading }} — What We're Reading Archive{% endblock %}
+{% block content %}
+<p class="breadcrumb"><a href="{{ root }}{{ back_href }}">{{ back_label }}</a></p>
+<h1>{{ heading }}</h1>
+{% if subhead %}<p class="subhead">{{ subhead }}</p>{% endif %}
+<div id="blurb-list">
+{% for b in blurbs %}{{ cards.card(b, root) }}{% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block title %}{{ b.article_title or "Untitled blurb" }} — What We're Reading Archive{% endblock %}
+{% block description %}{{ b.blurb_text[:200] }}{% endblock %}
+{% block content %}
+<p class="breadcrumb"><a href="{{ root }}issue/{{ b.post_slug }}/">{{ b.post_title }}</a> &middot; {{ b.post_date[:10] }}</p>
+<h1>{{ b.article_title or "(untitled)" }}</h1>
+<div class="blurb-meta">
+  {% for t in b.topics %}<a class="tag" href="{{ root }}topic/{{ t|slugify }}/">{{ t }}</a>{% endfor %}
+</div>
+<p class="byline-full">
+  by {% if b.team_author == "unknown" %}Unknown{% else %}<a href="{{ root }}author/{{ b.team_author|slugify }}/">{{ b.team_author }}</a>{% endif %}
+  {% if b.article_authors %}&middot; about work by
+    {% for a in b.article_authors %}<a href="{{ root }}writer/{{ a|slugify }}/">{{ a }}</a>{% if not loop.last %}, {% endif %}{% endfor %}
+  {% endif %}
+</p>
+
+<div class="blurb-body">{{ b.blurb_html|safe }}</div>
+
+{% if b.article_urls %}
+<div class="original-links">
+  <strong>Original link{{ 's' if b.article_urls|length > 1 }}:</strong>
+  <ul>
+  {% for url in b.article_urls %}<li><a href="{{ url }}" target="_blank" rel="noopener">{{ url }}</a></li>{% endfor %}
+  </ul>
+</div>
+{% endif %}
+
+{% if siblings %}
+<section class="related-section">
+  <h2>More from this issue</h2>
+  <ul class="link-list">
+  {% for s in siblings %}<li><a href="{{ root }}blurb/{{ s.id }}/">{{ s.article_title or "(untitled)" }}</a> — {{ s.team_author }}</li>{% endfor %}
+  </ul>
+</section>
+{% endif %}
+
+{% if related %}
+<section class="related-section">
+  <h2>Related blurbs</h2>
+  <ul class="link-list">
+  {% for r in related %}<li><a href="{{ root }}blurb/{{ r.id }}/">{{ r.article_title or "(untitled)" }}</a> — {{ r.team_author }}, {{ r.post_date[:10] }}</li>{% endfor %}
+  </ul>
+</section>
+{% endif %}
+{% endblock %}

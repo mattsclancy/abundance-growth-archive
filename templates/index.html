@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% import "_card.html" as cards %}
+{% block content %}
+<h1>All blurbs</h1>
+<p class="subhead">{{ blurbs|length }} blurbs from {{ issue_count }} weekly roundups, {{ earliest }} – {{ latest }}.</p>
+
+<div class="filters">
+  <input type="search" id="search-box" placeholder="Search titles, text, authors…">
+  <details class="facet-group" open>
+    <summary>Team author</summary>
+    {% for name, count in team_authors %}
+    <label><input type="checkbox" class="f-author" value="{{ name }}"> {{ name }} <span class="count">{{ count }}</span></label>
+    {% endfor %}
+  </details>
+  <details class="facet-group">
+    <summary>Topic</summary>
+    {% for name, count in topics %}
+    <label><input type="checkbox" class="f-topic" value="{{ name }}"> {{ name }} <span class="count">{{ count }}</span></label>
+    {% endfor %}
+  </details>
+  <button id="clear-filters" type="button">Clear filters</button>
+  <span id="result-count"></span>
+</div>
+
+<div id="blurb-list">
+{% for b in blurbs %}{{ cards.card(b, root) }}{% endfor %}
+</div>
+<p id="no-results" hidden>No blurbs match those filters.</p>
+{% endblock %}

@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% block title %}Abundance and Growth: What We're Reading Archive{% endblock %}</title>
+<meta name="description" content="{% block description %}A searchable archive of every blurb from the Abundance and Growth Fund's weekly reading roundup.{% endblock %}">
+<link rel="stylesheet" href="{{ root }}static/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="{{ root }}">What We're Reading — Archive</a>
+    <nav>
+      <a href="{{ root }}">All blurbs</a>
+      <a href="{{ root }}authors/">Team</a>
+      <a href="{{ root }}writers/">Writers</a>
+      <a href="{{ root }}topics/">Topics</a>
+      <a href="{{ root }}issues/">Issues</a>
+    </nav>
+  </div>
+</header>
+<main class="wrap">
+{% block content %}{% endblock %}
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    An archive of <a href="https://www.abundanceandgrowth.org/t/links">Abundance and Growth</a>'s weekly reading roundup.
+  </div>
+</footer>
+<script src="{{ root }}static/app.js"></script>
+</body>
+</html>

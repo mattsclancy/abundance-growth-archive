@@ -1,0 +1,13 @@
+{
+  "core_tags": [
+    {"slug": "housing-policy", "label": "Housing Policy"},
+    {"slug": "innovation-policy", "label": "Innovation Policy"},
+    {"slug": "high-skilled-immigration", "label": "High-Skilled Immigration"},
+    {"slug": "energy", "label": "Energy"},
+    {"slug": "state-capacity", "label": "State Capacity"},
+    {"slug": "clinical-trials", "label": "Clinical Trials"},
+    {"slug": "ai", "label": "AI"},
+    {"slug": "transportation", "label": "Transportation"}
+  ],
+  "note": "Core tags are the team's official focus areas -- prefer these where they clearly apply. For blurbs that don't fit any core tag well, coin a short, descriptive, Title Case tag of your own rather than forcing a bad fit. Ad-hoc tags get reviewed and consolidated into the site taxonomy after the enrichment pass."
+}

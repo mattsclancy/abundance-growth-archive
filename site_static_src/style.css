@@ -1,0 +1,124 @@
+:root {
+  --bg: #fdfcfa;
+  --fg: #1c1a17;
+  --muted: #6b6560;
+  --accent: #a4482e;
+  --border: #e6e1da;
+  --card-bg: #ffffff;
+  --tag-bg: #f3ede4;
+  --tag-fg: #6b4a2f;
+  --max-width: 780px;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #171513;
+    --fg: #ece7e0;
+    --muted: #9b948c;
+    --accent: #e08a63;
+    --border: #322d28;
+    --card-bg: #201d1a;
+    --tag-bg: #2b241d;
+    --tag-fg: #e0b28c;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #171513; --fg: #ece7e0; --muted: #9b948c; --accent: #e08a63;
+  --border: #322d28; --card-bg: #201d1a; --tag-bg: #2b241d; --tag-fg: #e0b28c;
+}
+:root[data-theme="light"] {
+  --bg: #fdfcfa; --fg: #1c1a17; --muted: #6b6560; --accent: #a4482e;
+  --border: #e6e1da; --card-bg: #ffffff; --tag-bg: #f3ede4; --tag-fg: #6b4a2f;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--fg);
+  line-height: 1.55;
+}
+.wrap { max-width: var(--max-width); margin: 0 auto; padding: 0 1.25rem; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.site-header { border-bottom: 1px solid var(--border); padding: 1rem 0; margin-bottom: 1.5rem; }
+.site-header .wrap { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem; }
+.brand { font-weight: 700; color: var(--fg); font-size: 1.05rem; }
+.site-header nav { display: flex; gap: 1rem; font-size: 0.9rem; }
+
+.site-footer { border-top: 1px solid var(--border); margin-top: 3rem; padding: 1.5rem 0; color: var(--muted); font-size: 0.85rem; }
+
+h1 { font-size: 1.6rem; margin-bottom: 0.3rem; }
+.subhead, .breadcrumb { color: var(--muted); font-size: 0.9rem; }
+.breadcrumb { margin-bottom: 0.5rem; }
+
+.filters {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1rem;
+  margin: 1.25rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+#search-box {
+  width: 100%;
+  padding: 0.55rem 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--card-bg);
+  color: var(--fg);
+  font-size: 0.95rem;
+}
+.facet-group summary { cursor: pointer; font-weight: 600; margin: 0.25rem 0; }
+.facet-group label { display: inline-block; margin: 0.15rem 0.75rem 0.15rem 0; font-size: 0.88rem; }
+.facet-group .count, .directory-list .count { color: var(--muted); font-size: 0.8rem; }
+#clear-filters {
+  align-self: flex-start;
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.3rem 0.7rem;
+  color: var(--fg);
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+#result-count { color: var(--muted); font-size: 0.85rem; }
+
+.blurb-card {
+  border-bottom: 1px solid var(--border);
+  padding: 1.1rem 0;
+}
+.blurb-card h3 { margin: 0.2rem 0; font-size: 1.1rem; }
+.blurb-meta { display: flex; gap: 0.4rem; align-items: center; flex-wrap: wrap; margin-bottom: 0.3rem; }
+.tag {
+  background: var(--tag-bg);
+  color: var(--tag-fg);
+  border-radius: 999px;
+  padding: 0.15rem 0.65rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+.date { color: var(--muted); font-size: 0.8rem; margin-left: auto; }
+.excerpt { color: var(--fg); margin: 0.4rem 0; }
+.byline, .byline-full { color: var(--muted); font-size: 0.85rem; }
+
+.blurb-body { margin: 1.25rem 0; font-size: 1.02rem; }
+.blurb-body p { margin: 0 0 1rem; }
+.blurb-body img, .blurb-body figure { max-width: 100%; }
+.blurb-body .subscription-widget-wrap, .blurb-body .subscription-widget-wrap-editor { display: none; }
+
+.original-links { font-size: 0.85rem; color: var(--muted); margin: 1.5rem 0; word-break: break-all; }
+.original-links ul { padding-left: 1.1rem; }
+
+.related-section { margin-top: 2rem; border-top: 1px solid var(--border); padding-top: 1rem; }
+.related-section h2 { font-size: 1rem; }
+.link-list { padding-left: 1.1rem; font-size: 0.92rem; }
+
+.directory-list { list-style: none; padding: 0; }
+.directory-list li { display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid var(--border); font-size: 1.02rem; }
+
+@media (max-width: 600px) {
+  .site-header nav { gap: 0.6rem; font-size: 0.82rem; }
+}

@@ -1,0 +1,6 @@
+venv/
+__pycache__/
+*.pyc
+data/raw/
+data/enrichment_batches/
+.DS_Store

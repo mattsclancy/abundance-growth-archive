@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}{{ heading }} — What We're Reading Archive{% endblock %}
+{% block content %}
+<h1>{{ heading }}</h1>
+<ul class="directory-list">
+{% for name, href, count in items %}
+  <li><a href="{{ root }}{{ href }}">{{ name }}</a> <span class="count">{{ count }}</span></li>
+{% endfor %}
+</ul>
+{% endblock %}

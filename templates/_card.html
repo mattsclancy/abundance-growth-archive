@@ -1,0 +1,19 @@
+{% macro card(b, root) %}
+<article class="blurb-card"
+  data-author="{{ b.team_author }}"
+  data-topics="{{ b.topics|join('|') }}"
+  data-date="{{ b.post_date[:10] }}"
+  data-search="{{ (b.article_title or '') ~ ' ' ~ b.blurb_text ~ ' ' ~ b.team_author ~ ' ' ~ (b.article_authors|join(' ')) }}">
+  <div class="blurb-meta">
+    {% for t in b.topics %}<a class="tag" href="{{ root }}topic/{{ t|slugify }}/">{{ t }}</a>{% endfor %}
+    <span class="date">{{ b.post_date[:10] }}</span>
+  </div>
+  <h3><a href="{{ root }}blurb/{{ b.id }}/">{{ b.article_title or "(untitled)" }}</a></h3>
+  <p class="excerpt">{{ b.blurb_text[:220] }}{% if b.blurb_text|length > 220 %}…{% endif %}</p>
+  <div class="byline">
+    by {% if b.team_author == "unknown" %}Unknown{% else %}<a href="{{ root }}author/{{ b.team_author|slugify }}/">{{ b.team_author }}</a>{% endif %}
+    {% if b.article_authors %}&middot; on {% for a in b.article_authors %}<a href="{{ root }}writer/{{ a|slugify }}/">{{ a }}</a>{% if not loop.last %}, {% endif %}{% endfor %}{% endif %}
+    &middot; from <a href="{{ root }}issue/{{ b.post_slug }}/">{{ b.post_title }}</a>
+  </div>
+</article>
+{% endmacro %}
