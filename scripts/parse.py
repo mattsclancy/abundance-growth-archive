@@ -14,6 +14,7 @@ data/blurbs.json, a flat list of:
     blurb_text,             # plain-text version
   }
 """
+import html as html_lib
 import json
 import re
 from pathlib import Path
@@ -32,7 +33,8 @@ AUTHOR_MISMATCHES = []
 
 
 def plain_text(html):
-    return re.sub(r"\s+", " ", TAG_RE.sub(" ", html)).strip()
+    stripped = re.sub(r"\s+", " ", TAG_RE.sub(" ", html)).strip()
+    return html_lib.unescape(stripped)
 
 
 def extract_links(html):
