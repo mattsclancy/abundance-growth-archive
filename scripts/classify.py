@@ -91,23 +91,33 @@ def classify(post):
 
 def main():
     posts = json.loads(POSTS_INDEX.read_text())
-    results = []
+    out_path = RAW_DIR.parent / "classification.json"
+    results = json.loads(out_path.read_text()) if out_path.exists() else []
+    known_slugs = {r["slug"] for r in results}
+
+    new_results = []
     for p in posts:
+        if p["slug"] in known_slugs:
+            continue
         html = (RAW_DIR / f"{p['slug']}.html").read_text()
         post = extract_post(html)
         label, stats = classify(post)
-        results.append({**p, "subtitle": post.get("subtitle"), "label": label, "stats": stats})
+        new_results.append({**p, "subtitle": post.get("subtitle"), "label": label, "stats": stats})
 
-    out_path = RAW_DIR.parent / "classification.json"
+    results.extend(new_results)
     out_path.write_text(json.dumps(results, indent=2))
 
     counts = {}
     for r in results:
         counts[r["label"]] = counts.get(r["label"], 0) + 1
-    print("Counts:", counts)
+    print("Counts (all-time):", counts)
     print()
-    for r in results:
-        print(f"[{r['label']:19}] {r['post_date'][:10]}  {r['slug']:55} stats={r['stats']}")
+    if new_results:
+        print(f"{len(new_results)} newly classified post(s):")
+        for r in new_results:
+            print(f"[{r['label']:19}] {r['post_date'][:10]}  {r['slug']:55} stats={r['stats']}")
+    else:
+        print("No new posts to classify.")
 
 
 if __name__ == "__main__":

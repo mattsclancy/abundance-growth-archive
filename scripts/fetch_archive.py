@@ -45,25 +45,31 @@ def extract_date_and_title(html):
 
 def fetch_post_index(force=False):
     """Enumerate every post via sitemap.xml, then pull date+title out of
-    each post's own HTML (the archive API can't be trusted for this)."""
-    if POSTS_INDEX.exists() and not force:
-        return json.loads(POSTS_INDEX.read_text())
+    each post's own HTML (the archive API can't be trusted for this).
+    Incremental: only fetches slugs not already in the cached index, so
+    re-running after new posts appear just picks up the new ones."""
+    existing = json.loads(POSTS_INDEX.read_text()) if POSTS_INDEX.exists() and not force else []
+    known_slugs = {p["slug"] for p in existing}
 
     slugs = fetch_slugs_from_sitemap()
-    posts = []
-    for i, slug in enumerate(slugs):
+    new_slugs = [s for s in slugs if s not in known_slugs]
+
+    new_posts = []
+    for i, slug in enumerate(new_slugs):
         html = fetch_post_html(slug, force=force)
         post_date, title = extract_date_and_title(html)
-        posts.append({
+        new_posts.append({
             "slug": slug,
             "title": title,
             "post_date": post_date,
             "canonical_url": f"{BASE}/p/{slug}",
         })
-        print(f"  [{i+1}/{len(slugs)}] {slug} -> {post_date} | {title}")
+        print(f"  [new {i+1}/{len(new_slugs)}] {slug} -> {post_date} | {title}")
 
+    posts = existing + new_posts
     posts.sort(key=lambda p: p["post_date"] or "", reverse=True)
     POSTS_INDEX.write_text(json.dumps(posts, indent=2))
+    print(f"{len(new_posts)} new post(s) found; {len(posts)} total in index.")
     return posts
 
 

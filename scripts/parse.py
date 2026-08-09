@@ -171,11 +171,17 @@ PARSERS = {
 
 def main():
     classification = json.loads(CLASSIFICATION.read_text())
-    all_blurbs = []
+    all_blurbs = json.loads(OUT_PATH.read_text()) if OUT_PATH.exists() else []
+    already_parsed_slugs = {b["post_slug"] for b in all_blurbs}
     problems = []
 
     for entry in classification:
+        if entry["slug"] in already_parsed_slugs:
+            continue
         label = entry["label"]
+        if label in ("roundup_unrecognized", "ambiguous"):
+            problems.append(f"{entry['slug']}: classified as {label} -- doesn't match any known format, needs a look before it can be parsed")
+            continue
         if label not in PARSERS:
             continue
         html = (RAW_DIR / f"{entry['slug']}.html").read_text()
@@ -207,7 +213,7 @@ def main():
     problems.extend(AUTHOR_MISMATCHES)
 
     OUT_PATH.write_text(json.dumps(all_blurbs, indent=2))
-    print(f"Wrote {len(all_blurbs)} blurbs from {len(classification)} classified posts to {OUT_PATH}")
+    print(f"{len(all_blurbs)} total blurbs in {OUT_PATH} ({len(already_parsed_slugs)} posts were already parsed and left untouched)")
     if problems:
         print(f"\n{len(problems)} PROBLEMS flagged for review:")
         for p in problems:
