@@ -8,7 +8,6 @@ import json
 from pathlib import Path
 
 import numpy as np
-from sentence_transformers import SentenceTransformer
 
 DATA_DIR = Path(__file__).parent.parent / "data"
 BLURBS = DATA_DIR / "blurbs.json"
@@ -27,6 +26,18 @@ def quantize(vectors):
 
 
 def main():
+    """Returns True on success, False if the embedding step could not
+    run (e.g. sentence-transformers/torch failed to install in a fresh
+    sandbox) -- this step is a nice-to-have (related-blurb links), not
+    required for the core job of getting new content published, so a
+    failure here must never block the rest of the pipeline."""
+    try:
+        from sentence_transformers import SentenceTransformer
+    except Exception as e:
+        print(f"SKIPPING embeddings: sentence-transformers unavailable ({e}). "
+              f"related.json will not be updated for new blurbs this run.")
+        return False
+
     blurbs = json.loads(BLURBS.read_text())
     texts = [f"{b.get('article_title') or ''}. {b['blurb_text']}".strip() for b in blurbs]
 
@@ -46,6 +57,7 @@ def main():
     OUT_PATH.write_text(json.dumps(out))
     print(f"Wrote {len(blurbs)} embeddings ({q.shape[1]} dims, int8) to {OUT_PATH}")
     print(f"File size: {OUT_PATH.stat().st_size / 1024:.0f} KB")
+    return True
 
 
 if __name__ == "__main__":

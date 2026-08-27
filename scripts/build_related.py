@@ -19,6 +19,10 @@ TOP_K = 5
 
 
 def main():
+    if not EMBEDDINGS.exists():
+        print(f"SKIPPING related-blurb computation: {EMBEDDINGS} does not exist.")
+        return False
+
     emb = json.loads(EMBEDDINGS.read_text())
     blurbs = {b["id"]: b for b in json.loads(BLURBS.read_text())}
     ids = emb["ids"]
@@ -43,6 +47,7 @@ def main():
 
     OUT_PATH.write_text(json.dumps(related, indent=2))
     print(f"Wrote related-blurb lists for {len(related)} blurbs to {OUT_PATH}")
+    return True
 
 
 if __name__ == "__main__":
