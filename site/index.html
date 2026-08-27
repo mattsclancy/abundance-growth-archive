@@ -26,46 +26,48 @@
 <main class="wrap">
 
 <h1>All blurbs</h1>
-<p class="subhead">203 blurbs from 31 weekly roundups, 2026-01-08 – 2026-08-05.</p>
+<p class="subhead">218 blurbs from 36 weekly roundups, 2026-01-08 – 2026-08-26.</p>
 
 <div class="filters">
   <input type="search" id="search-box" placeholder="Search titles, text, authors…">
   <details class="facet-group" open>
     <summary>Team author</summary>
     
-    <label><input type="checkbox" class="f-author" value="Alex Armlovich"> Alex Armlovich <span class="count">36</span></label>
+    <label><input type="checkbox" class="f-author" value="Alex Armlovich"> Alex Armlovich <span class="count">39</span></label>
     
-    <label><input type="checkbox" class="f-author" value="Dylan Matthews"> Dylan Matthews <span class="count">29</span></label>
+    <label><input type="checkbox" class="f-author" value="Dylan Matthews"> Dylan Matthews <span class="count">31</span></label>
     
-    <label><input type="checkbox" class="f-author" value="Jordan Dworkin"> Jordan Dworkin <span class="count">33</span></label>
+    <label><input type="checkbox" class="f-author" value="Jordan Dworkin"> Jordan Dworkin <span class="count">36</span></label>
     
-    <label><input type="checkbox" class="f-author" value="Matt Clancy"> Matt Clancy <span class="count">32</span></label>
+    <label><input type="checkbox" class="f-author" value="Matt Clancy"> Matt Clancy <span class="count">35</span></label>
     
     <label><input type="checkbox" class="f-author" value="Nisha Austin"> Nisha Austin <span class="count">9</span></label>
     
-    <label><input type="checkbox" class="f-author" value="Saloni Dattani"> Saloni Dattani <span class="count">26</span></label>
+    <label><input type="checkbox" class="f-author" value="Saloni Dattani"> Saloni Dattani <span class="count">28</span></label>
     
-    <label><input type="checkbox" class="f-author" value="Willow Latham-Proenca"> Willow Latham-Proenca <span class="count">29</span></label>
+    <label><input type="checkbox" class="f-author" value="Willow Latham-Proenca"> Willow Latham-Proenca <span class="count">31</span></label>
     
   </details>
   <details class="facet-group">
     <summary>Topic</summary>
     
-    <label><input type="checkbox" class="f-topic" value="Housing Policy"> Housing Policy <span class="count">55</span></label>
+    <label><input type="checkbox" class="f-topic" value="Housing Policy"> Housing Policy <span class="count">59</span></label>
     
-    <label><input type="checkbox" class="f-topic" value="Innovation Policy"> Innovation Policy <span class="count">51</span></label>
+    <label><input type="checkbox" class="f-topic" value="Innovation Policy"> Innovation Policy <span class="count">54</span></label>
     
-    <label><input type="checkbox" class="f-topic" value="Energy"> Energy <span class="count">32</span></label>
+    <label><input type="checkbox" class="f-topic" value="Energy"> Energy <span class="count">35</span></label>
     
-    <label><input type="checkbox" class="f-topic" value="State Capacity"> State Capacity <span class="count">28</span></label>
+    <label><input type="checkbox" class="f-topic" value="Clinical Trials"> Clinical Trials <span class="count">29</span></label>
     
-    <label><input type="checkbox" class="f-topic" value="Clinical Trials"> Clinical Trials <span class="count">27</span></label>
+    <label><input type="checkbox" class="f-topic" value="State Capacity"> State Capacity <span class="count">29</span></label>
     
-    <label><input type="checkbox" class="f-topic" value="AI"> AI <span class="count">21</span></label>
+    <label><input type="checkbox" class="f-topic" value="AI"> AI <span class="count">23</span></label>
     
-    <label><input type="checkbox" class="f-topic" value="International Comparisons"> International Comparisons <span class="count">11</span></label>
+    <label><input type="checkbox" class="f-topic" value="International Comparisons"> International Comparisons <span class="count">14</span></label>
     
-    <label><input type="checkbox" class="f-topic" value="Progress Studies"> Progress Studies <span class="count">6</span></label>
+    <label><input type="checkbox" class="f-topic" value="Progress Studies"> Progress Studies <span class="count">7</span></label>
+    
+    <label><input type="checkbox" class="f-topic" value="Philanthropy &amp; Metascience"> Philanthropy &amp; Metascience <span class="count">7</span></label>
     
     <label><input type="checkbox" class="f-topic" value="High-Skilled Immigration"> High-Skilled Immigration <span class="count">4</span></label>
     
@@ -74,8 +76,6 @@
     <label><input type="checkbox" class="f-topic" value="Biotech &amp; Pharma"> Biotech &amp; Pharma <span class="count">4</span></label>
     
     <label><input type="checkbox" class="f-topic" value="Transportation"> Transportation <span class="count">4</span></label>
-    
-    <label><input type="checkbox" class="f-topic" value="Philanthropy &amp; Metascience"> Philanthropy &amp; Metascience <span class="count">4</span></label>
     
     <label><input type="checkbox" class="f-topic" value="History &amp; Biography"> History &amp; Biography <span class="count">3</span></label>
     
@@ -95,12 +95,284 @@
     
     <label><input type="checkbox" class="f-topic" value="Longevity Research"> Longevity Research <span class="count">1</span></label>
     
+    <label><input type="checkbox" class="f-topic" value="Global Health &amp; Pandemics"> Global Health &amp; Pandemics <span class="count">1</span></label>
+    
   </details>
   <button id="clear-filters" type="button">Clear filters</button>
   <span id="result-count"></span>
 </div>
 
 <div id="blurb-list">
+
+<article class="blurb-card"
+  data-author="Matt Clancy"
+  data-topics="Housing Policy|Innovation Policy"
+  data-date="2026-08-26"
+  data-search="Housing and innovation: evidence from Germany There’s an old idea that cities are engines of innovation in large part because they cluster together lots of innovators; these innovators make each other more productive via a variety of mechanisms. Across US cities, a 10% increase in the population of inventors is associated with a 2% increase in the per-person patent output on average (see Wiebe 2026 , Table A12, column 7). We’ve always been interested in this idea, because it (partially) informs how valuable housing is: if zoning reform increases the housing stock of a city by 10%, do its inventors eventually become 2% more productive? Unfortunately, correlation is not causation and pinning down just how real this relationship is has been tricky (see item #4 in this post for an example). So I was interested to find a 2024 working paper by Brian C. Fujiy at the US Census Bureau which looks at this question afresh. Fujiy looks at the unification of East and West Germany as an event that created a large amount of sudden and unanticipated cross-city movement from inventors. Using a variety of approaches to try and control for potential confounders, he eventually estimates that a 10% increase in the inventor population leads to a 4% increase in the productivity of the population’s inventors. Thanks for reading The Abundance and Growth Blog! Subscribe for free to receive new posts. Matt Clancy Brian C. Fujiy">
+  <div class="blurb-meta">
+    <a class="tag" href="/topic/housing-policy/">Housing Policy</a><a class="tag" href="/topic/innovation-policy/">Innovation Policy</a>
+    <span class="date">2026-08-26</span>
+  </div>
+  <h3><a href="/blurb/cancer-vaccines-what-german-unification-4/">Housing and innovation: evidence from Germany</a></h3>
+  <p class="excerpt">There’s an old idea that cities are engines of innovation in large part because they cluster together lots of innovators; these innovators make each other more productive via a variety of mechanisms. Across US cities, a …</p>
+  <div class="byline">
+    by <a href="/author/matt-clancy/">Matt Clancy</a>
+    &middot; on <a href="/writer/brian-c-fujiy/">Brian C. Fujiy</a>
+    &middot; from <a href="/issue/cancer-vaccines-what-german-unification/">Cancer vaccines, what German unification can teach us about housing and innovation, and more</a>
+  </div>
+</article>
+
+<article class="blurb-card"
+  data-author="Alex Armlovich"
+  data-topics="Housing Policy"
+  data-date="2026-08-26"
+  data-search="Housing supply laws across the country Mercatus Center’s fourth annual state YIMBY legislative tracker is out: 350 housing supply bills introduced across 40 states in the past year, 89 enacted in 28. The headline wins are familiar: California’s SB 79, New York’s SEQRA reform, North Carolina’s parking minimums, Virginia’s YIGBY package. But Mercatus also covers a long tail of state reforms: Idaho passed one of the strongest minimum-lot-size reforms in the country plus ADUs, single-stair, and third-party trade inspections in a single package. Kansas capped residential lot size mandates at 3,000 sq. ft with bipartisan support. One striking trend is geographic diffusion : the YIMBY legislative frontier has moved into moderate-cost states (Indiana, Kansas, Michigan, Pennsylvania) where postpandemic price increases turned housing from a coastal problem into a local one, and there’s some tractability argument for acting before prices get too far out of control. On the minus side, Connecticut repealed its single-stair law, the first outright repeal of a YIMBY-era reform. Hawaii, Minnesota, and Illinois all stalled despite high costs or strong gubernatorial pushes. Alex Armlovich Mercatus Center">
+  <div class="blurb-meta">
+    <a class="tag" href="/topic/housing-policy/">Housing Policy</a>
+    <span class="date">2026-08-26</span>
+  </div>
+  <h3><a href="/blurb/cancer-vaccines-what-german-unification-3/">Housing supply laws across the country</a></h3>
+  <p class="excerpt">Mercatus Center’s fourth annual state YIMBY legislative tracker is out: 350 housing supply bills introduced across 40 states in the past year, 89 enacted in 28. The headline wins are familiar: California’s SB 79, New Yor…</p>
+  <div class="byline">
+    by <a href="/author/alex-armlovich/">Alex Armlovich</a>
+    &middot; on <a href="/writer/mercatus-center/">Mercatus Center</a>
+    &middot; from <a href="/issue/cancer-vaccines-what-german-unification/">Cancer vaccines, what German unification can teach us about housing and innovation, and more</a>
+  </div>
+</article>
+
+<article class="blurb-card"
+  data-author="Jordan Dworkin"
+  data-topics="Philanthropy &amp; Metascience"
+  data-date="2026-08-26"
+  data-search="Downweighing review scores at NIH Last week the NIH released an RFI proposing a change to how it uses and reports peer review scores. Instead of receiving a numerical impact score and percentile, applicants would learn only which of three bins their proposal landed in: “most competitive” for the top 25%, “competitive” for 26-50%, and “not discussed” for the rest. Overall impact scores and percentiles would also no longer be shared with program staff and advisory councils, who would instead see the relevant bin, the written critiques, and the specific criterion scores. The stated rationale is that the numerical scores falsely suggest a high level of quantitative precision, and are middlingly predictive of downstream outcomes; thus, more qualitative buckets can give applicants and program staff a higher-level sense of relative quality while mitigating the likelihood of either actor overindexing on score-based rankings in their assessment of proposal quality. Indeed, I have heard from NIH institute directors that program officers’ decisions often hew too closely to percentile scores, rather than incorporating reviewer scores, reviewer comments, and PO discretion into a more holistic portfolio creation process. It is reasonable that removing the opportunity to simply rank and fund to the cutoff could encourage more consideration of written comments and disciplinary priorities (NSF already approaches their review and decision-making in something closer to this manner). But many scientists and science policy practitioners are reasonably wary, given the broader context of the OMB proposed rule, ongoing grant terminations, and politicization of review. In my view, the most useful piece on this proposal is from DrugMonkey, a longtime pseudonymous blogger on biomedical science. They generally support a balanced approach, and point out that many institutes have historically deviated from the strict percentile order; as a result, this change mostly forces institutes that have historically funded more strictly on paylines to adopt the practices of the more balanced institutes. By DrugMonkey’s lights, the reason to be concerned is not that peer review scores are sacred and deviating from a strict order is itself harmful to science, but that the proposed change could give political appointees more authority to override scientific review while simultaneously obscuring that process. Comments are due October 13. Jordan Dworkin DrugMonkey">
+  <div class="blurb-meta">
+    <a class="tag" href="/topic/philanthropy-metascience/">Philanthropy &amp; Metascience</a>
+    <span class="date">2026-08-26</span>
+  </div>
+  <h3><a href="/blurb/cancer-vaccines-what-german-unification-2/">Downweighing review scores at NIH</a></h3>
+  <p class="excerpt">Last week the NIH released an RFI proposing a change to how it uses and reports peer review scores. Instead of receiving a numerical impact score and percentile, applicants would learn only which of three bins their prop…</p>
+  <div class="byline">
+    by <a href="/author/jordan-dworkin/">Jordan Dworkin</a>
+    &middot; on <a href="/writer/drugmonkey/">DrugMonkey</a>
+    &middot; from <a href="/issue/cancer-vaccines-what-german-unification/">Cancer vaccines, what German unification can teach us about housing and innovation, and more</a>
+  </div>
+</article>
+
+<article class="blurb-card"
+  data-author="Saloni Dattani"
+  data-topics="Clinical Trials"
+  data-date="2026-08-26"
+  data-search="Personalized cancer vaccines are now real Researchers have spent decades trying to develop personalized cancer vaccines, and last week, the first one succeeded . It’s called intismeran autogene (mouthful), was developed by Moderna and Merck, and involves sequencing melanoma patients’ cancer mutations, creating a custom mRNA to target them, and delivering the vaccine to stop the cancer recurring. The news came as the drug passed its interim goal in a phase three trial, where it was given to people with high-risk resected melanoma. It led to Moderna’s stock jumping 177%, which was apparently the largest one-day gain by any S&amp;P 500 stock this century . I found the size of the surge surprising because you could have already been fairly confident that the drug would succeed since at least June: as I wrote in an earlier post , the company presented data from their phase 2b trial at an oncology conference almost three months ago, which showed a 49% reduction in the risk of recurrence or death (p = 0.0075). But, according to financial analysts , the huge market reaction was probably down to a short squeeze and the belief that mRNA could be a more widely useful platform to develop other cancer vaccines too. That makes sense, but it’s worth knowing that melanoma is a much easier disease to develop cancer vaccines for than others. It carries a very high number of mutations, so you have thousands of possible ‘neoantigens’ to select from and can choose those that look strong on many measures, but this isn’t the case for many cancers. Many cancers have far fewer mutations to select from, and it’s currently hard to predict whether their mutations will be displayed or measure which ones actually are displayed. But very few people thought this attempt would work either, until recently. According to a very interesting new STAT article detailing how this cancer vaccine came about, Moderna’s own executives didn’t expect it would work until 2023; it first entered clinical trials in 2017. In case you’re interested in more about personalized cancer vaccines, I’ll once again recommend this great podcast episode, How to design a cancer vaccine , hosted by Owl Posting and featuring Alex Rubinsteyn and Benjamin Vincent, two scientists whose work focuses on cancer immunology and vaccines. Saloni Dattani ">
+  <div class="blurb-meta">
+    <a class="tag" href="/topic/clinical-trials/">Clinical Trials</a>
+    <span class="date">2026-08-26</span>
+  </div>
+  <h3><a href="/blurb/cancer-vaccines-what-german-unification-1/">Personalized cancer vaccines are now real</a></h3>
+  <p class="excerpt">Researchers have spent decades trying to develop personalized cancer vaccines, and last week, the first one succeeded . It’s called intismeran autogene (mouthful), was developed by Moderna and Merck, and involves sequenc…</p>
+  <div class="byline">
+    by <a href="/author/saloni-dattani/">Saloni Dattani</a>
+    
+    &middot; from <a href="/issue/cancer-vaccines-what-german-unification/">Cancer vaccines, what German unification can teach us about housing and innovation, and more</a>
+  </div>
+</article>
+
+<article class="blurb-card"
+  data-author="Jordan Dworkin"
+  data-topics="AI|Philanthropy &amp; Metascience"
+  data-date="2026-08-20"
+  data-search="AI for science: What can it do? Can it do things? Let’s find out! If there’s one thing I’ve learned in the past week, it’s that people love quote round-ups. If there’s another thing I’ve learned, it’s that scientists have a lot of feelings about AI in science. With their powers combined… AI is doing math In the past few weeks, OpenAI announced 10 new (apparently impressive, according to mathematicians) results achieved by an internal model; Anthropic followed with a Claude-discovered Riemann-related result (not a proof, but a substantial improvement on the lower bound). In light of these results, Fernando Borretti refutes some common arguments for why AI might not transform mathematics. “Computers are superhuman chess players, yet we don’t care, and continue playing as normal. Why should mathematics be different? The main reason, I think, is that chess is self-contained: results from chess don’t help us understand the orbits of the planets or the binding of drugs to protein surfaces. But mathematics, famously , is the great dynamo of science, the best language and method for understanding the world. A machine that can replace a human mathematician, but better and faster and cheaper, is materially useful; a better chess engine is not.” Noah Smith, while maintaining that the role of the mathematician will continue, argues that a specific form of heroic individual contribution is likely on its way out. “We normally think of AI as something that replaces a single human worker, but I think that’s the wrong way to think of it. AI is really a new world-mind — a technology that takes the accumulated findings of individual humans (or robots, or other sensors) and integrates them into a general picture of the world… [E]ach time one of us reports a new scientific finding or expresses a new perspective, that adds to AI’s knowledge and understanding of the world… But unlike human society, AI doesn’t need heroic human geniuses. Its ability to understand complex ideas is not limited by the ability of a single human brain to apprehend, intuit, or communicate those ideas.” Paata Ivanisvili recounts the pace of mathematical discovery from the front lines. A small episode from the AI–math battlefield: Aug 4: a paper appears on arXiv https://t.co/eJyFl3cfAG claiming partial progress on the Bourgain–Brezis Sobolev conjecture. Same day: I ask AI, “can you try solving the full conjecture?” Aug 6: AI says, “done.” (The proof attempt and all iterations are in my Overleaf history.) I start asking experts if they would like to check the argument. Aug 8: another paper appears on arXiv https://t.co/stCwYd7ik7 claiming a full resolution of the conjecture (also with help from AI). The pace is getting wild. Tim Gowers explores the question of what aspects of mathematics, specifically, LLMs are good at, and the implications of potential answers. “If it is true that current models are particularly good at finding examples, that is probably not because they have a particular affinity for existential statements, but more because the proof-discovery methods that are appropriate for finding certain kinds of examples play to the obvious strengths of LLMs: wide knowledge and the ability to explore many paths of the search tree that humans would judge to have a low probability of success.” Terry Tao gives a lecture on mathematics in the age of AI, and the need for the field to take a more active role in examining its own role. “What are the precise goals, objectives, and values of our mathematical community, and the enterprise of mathematical research? Not just the explicit goals that we communicate to the public (or to funding agencies), but also the implicit goals that we actually seek in practice?” And Iris Shi writes a beautiful, difficult-to-summarize-but-very-worth reading meditation on the present and future of math as her PhD comes to an end. “My physicist friend once asked me what the point of doing research was if someone like Terence Tao could have figured out everything in my dissertation in a tenth of the time. I answered by pointing out that Terence Tao didn’t. Terence Tao did not find a small open problem posited by my advisor and publish a bite sized result making incremental progress. He has only so much time and so many other fish to fry. And in his absence, I was given the chance to touch the edge of knowing and experience the unmatched exhilaration of discovering structure in the labyrinth of everything.” From: AI cracks 80-year-old mathematics challenge Is AI doing other science? There’s also been a flurry of activity in AI for non-math-science, with the first AI-designed virus , breakthroughs in cyclone forecasting , 1 a shake-up at DeepMind , and a new Jeff Dean-led AI for science company. To figure out what we can actually say about AI’s capabilities in drug discovery, an all-star team takes a careful look at the evidence and finds it wanting (if promising). “The focus of AI in drug discovery must shift from doing what can be done - such as modelling data that is readily available, but that is unlikely to move the needle - to doing what should be done, even if this requires, for example, substantial data generation.” “‘AI in drug discovery’ can mean two very different things: advanced, rapidly developed methods that lack thorough validation, as well as mature, established methods that have only just become practical to use at scale in production environments. What is common to both situations though is that the translation from ‘AI’ to ‘drug discovery’ has not yet been observed in an efficient and sufficiently durable manner to lead to clinical impact.” Noah Olsman posits that many AI-for-bio efforts implicitly view biology as chess, when it is actually more like Kriegspiel . “There is a variant of chess, called Kriegspiel, where each player can see only their own pieces. The game is played with three boards: two players sit back-to-back and move their own pieces while a referee keeps track of both players’ movements and mirrors them on a third board. The players go back and forth taking turns and, each time, the referee tells them whether that move is legal, and if they took a piece. The identity of the taken piece is only revealed if it’s a pawn.” “Recently I have come to think that the differences between chess and Kriegspiel serve as a good metaphor for the gap between theory and practice in the life sciences. I entered biological research as a theorist who believed that enough mathematics could turn study of life into a game of chess: difficult, but ultimately legible. After spending years as an experimentalist, though, I have come to think that biology is much closer to Kriegspiel. We make moves (experiments) with only partial information, infer the hidden state of the board from sparse feedback (data), and often learn what mattered only after the consequences have unfolded, sometimes weeks or months later.” Meanwhile Carlos Outeiral lays out the case that the gap in performance between AlphaFold 2 and AlphaFold 3 is because both rest on modeling evolution rather than physics, which works better for shape (AF2) than binding (AF3). “The thesis of this essay is that the root cause of the slowdown is reliance on coevolution . The fundamental breakthrough in AlphaFold 2 was its ability to mine the evolutionary history of a protein to rapidly explore conformational space. Within a single protein, residues that touch in the folded structure (“contacts”) are constrained to evolve in concert… So if you align a protein’s sequence against millions of its relatives in genomic databases, these correlated changes capture a faint statistical shadow, left by evolution, of which residues sit close in space. … Put another way: the model appears to have learned the physics of biomolecular interactions, when it has largely learned protein genealogy.” A team at DeepMind discusses both the promise of AI agents for speeding up scientific ideation, and the yet-unsolved gap in speeding up the validation of promising ideas. “Most scientists have no shortage of ideas. The challenge is knowing which ones to pursue. This is where agents are starting to help. An agent can digest a field’s accessible literature, making connections across disciplines that no single researcher would have time to trace.” “At the moment, however, the validation gap in most disciplines is widening, not closing. An agent can propose a novel genetic lead to reverse cellular ageing, but cannot say definitively whether it actually works. This explains why companies like Google DeepMind, Ginkgo Bioworks and Lila Sciences are investing in automated labs. But they only suit some fields, are expensive to build and are still early in development. And even automation cannot rush nature’s clock.” Daphne Koller breaks down the misalignment between where AI-for-drug-discovery efforts focus and where the actual bottlenecks in drug discovery are: “AI will certainly generate new and better molecules at an unprecedented rate, but will it generate drugs that unlock diseases for which there is currently no meaningful treatment? … [T]he biggest step functions in our ability to drug the undruggable have historically come not from better molecular design tools, but from expanding our repertoire of therapeutic modalities: first biologics, then siRNA and antisense oligonucleotides, then gene editing. Each new modality opened a class of targets that was simply inaccessible before.” And the CRUX team, in a study led by Peter Kirgis, Sayash Kapoor, and Arvind Narayanan, look beyond AI agents’ ability to make progress on clean, verifiable tasks, and test whether they could conduct open-ended, independent research . For now, no. 2 “Our key finding was that while agents could solve the engineering problems necessary to do the research, they failed to produce original research at the caliber of a top ML conference. Our main takeaways: The agents lacked the judgment to identify when a problem was adequately solved…. The agents lacked awareness about the resources available to them and the timeline for the project… The agents did not creatively respond to feedback about poor research design… The agents did not effectively backtrack from unpromising approaches…. The agents did not follow concrete instructions....” From: WeatherNext: AI model achieves breakthrough in forecasting cyclones AI is reviewing (and submitting) science Some aspects of the validation gap (at least in computational or theoretical fields) may be taken on by AI review. This possibility has caused two stirs on twitter in the past week or so, one when Refine announced its partnership with AEA and Econometric Society (discussed here ), and another today based on this post from Itai Yanai. Efforts to evaluate AI review tools often face the issue of mediocre ground truth (i.e. did a human or an LLM think the review was good overall? Did they think the individual comments were substantive?). Paul Litvak instead inserts errors and checks if tools can spot them (spoiler: they seem to do better than humans ). “Most systems work by ensembling, having the LLMs judge each other’s output. That, as we’ll see, is a good strategy, since different LLMs are surprisingly uncorrelated as far as the errors they can catch. Nonetheless, this isn’t satisfying since we don’t know whether even pooled models miss some categories of errors. Using human peer review as the gold standard, as any professor will tell you, is also unsatisfying, since human peer review varies widely in quality. Of Claude’s suggestions, one stood out — inserting errors into papers and seeing whether a given AI system can spot them.” Beyond reviewing papers, advances in AI-based reproduction and replication of data+code continue apace, this time with a discipline-agnostic tool from Liu, Tjiaranata, and Tan. “We present VERITAS, the first end-to-end domain-agnostic replication framework built around CLI coding agents. VERITAS supports flexible input modes, extracts the paper’s claims independently of the original authors, and withholds those claims from the replicating agent to mitigate leakage. The pipeline spans claim extraction, replication, and verification, and aggregates the per-claim verdicts into an importance-weighted Replication Score for the paper.” But what about replication of findings in new data? From an ambitious new benchmarking effort : “Several benchmarks have been proposed to develop and evaluate LLM agents on research reproduction tasks, including CORE-Bench, PaperBench, and REPRO-Bench… Existing benchmarks operate under the assumption that the new data sample is readily available to the agent. There are no benchmarks designed to assess agents’ capability to replicate research claims in a setting where a new data sample must be retrieved in advance... [W]e introduce ReplicatorBench, a benchmark for replicating published research claims in social and behavioral sciences.” Let’s close on a would you rather: (a) have an LLM review your conference submissions, or (b) review dozens of LLM-authored conference submissions? I don’t know for sure which they’d pick, but I can say that Caleb Robinson and Isaac Corley did not enjoy the conference review circuit this summer. “Between the two of us, we reviewed 22 paper submissions this summer, spread across NeurIPS , WACV , and TerraBytes (a geospatial workshop at ECCV). Fifteen of the 22 (68%) contained entirely fabricated citations, fabricated author lists for existing papers, and/or were clearly LLM-generated (e.g. hallucinated technical jargon, nonsensical writing, irrelevant citations). This is called being in the ‘slop trenches.’” From: How well does AI peer review work? Thanks for reading The Abundance and Growth Blog! Subscribe for free to receive new posts. 1 There was a funny cognitive offloading tweet about this one that I wanted to link but can’t find. If that was you, or if you know it, let me know! 2 To be fair to the agents, it doesn’t look like the team tried prompting “it’s enough of partial results. let’s finish with a complete breakthrough study.” Jordan Dworkin ">
+  <div class="blurb-meta">
+    <a class="tag" href="/topic/ai/">AI</a><a class="tag" href="/topic/philanthropy-metascience/">Philanthropy &amp; Metascience</a>
+    <span class="date">2026-08-20</span>
+  </div>
+  <h3><a href="/blurb/ai-for-science-what-can-it-do-can-1/">AI for science: What can it do? Can it do things? Let’s find out!</a></h3>
+  <p class="excerpt">If there’s one thing I’ve learned in the past week, it’s that people love quote round-ups. If there’s another thing I’ve learned, it’s that scientists have a lot of feelings about AI in science. With their powers combine…</p>
+  <div class="byline">
+    by <a href="/author/jordan-dworkin/">Jordan Dworkin</a>
+    
+    &middot; from <a href="/issue/ai-for-science-what-can-it-do-can/">AI for science: What can it do? Can it do things? Let’s find out!</a>
+  </div>
+</article>
+
+<article class="blurb-card"
+  data-author="Matt Clancy"
+  data-topics="Progress Studies"
+  data-date="2026-08-19"
+  data-search="GDP makes you better off, but it’s not the meaning of life GDP per capita is positively correlated with a lot of desirable things, like health and subjective well-being (even though self-reported well-being in the United States has been falling for the last decade, it remains roughly at the level one would expect given our GDP per capita!). But GDP is not everything - it turns out reports of meaning in life actually decline with GDP per capita! Is this because “The meaning of life is a problem for people who are not desperate, people who can count on survival, comfort, security, and some measure of pleasure”, as social psychologist Roy Baumeister once wondered? 1 Figure 1 from Oishi and Diener (2014) Maybe not. A 2014 paper by Oishi and Diener argues this effect is actually driven by religiosity. Religiosity is positively correlated with meaning; it’s just that religiosity is also negatively correlated with the GDP per capita. If you try to predict meaning with two variables - religiosity and GDP per capita, religiosity carries the day and GDP per capita no longer carries any additional predictive value. Indeed, when the data was collected, the US was actually an unusually religious high income country, and also a leader among high income countries in terms of how meaningful its residents find their lives. US religiosity has dropped substantially since 2007 though, and so I suspect a repeat of the study may not find the same results. Thanks for reading The Abundance and Growth Blog! Subscribe for free to receive new posts. Matt Clancy Shigehiro Oishi Ed Diener">
+  <div class="blurb-meta">
+    <a class="tag" href="/topic/progress-studies/">Progress Studies</a>
+    <span class="date">2026-08-19</span>
+  </div>
+  <h3><a href="/blurb/energy-shortages-transformer-ateel-4/">GDP makes you better off, but it’s not the meaning of life</a></h3>
+  <p class="excerpt">GDP per capita is positively correlated with a lot of desirable things, like health and subjective well-being (even though self-reported well-being in the United States has been falling for the last decade, it remains ro…</p>
+  <div class="byline">
+    by <a href="/author/matt-clancy/">Matt Clancy</a>
+    &middot; on <a href="/writer/shigehiro-oishi/">Shigehiro Oishi</a>, <a href="/writer/ed-diener/">Ed Diener</a>
+    &middot; from <a href="/issue/energy-shortages-transformer-ateel/">Energy shortages, transformer steel, and the meaning of life</a>
+  </div>
+</article>
+
+<article class="blurb-card"
+  data-author="Alex Armlovich"
+  data-topics="Housing Policy"
+  data-date="2026-08-19"
+  data-search="Building New Homes Brian Potter’s reading list has a good housing subsection this week : First, there’s a striking divergence in existing home price data versus transaction prices at the largest homebuilders: Lennar has cut average selling prices 25% since 2022, overall median sale prices on FRED are down, but the Case-Shiller repeat-sale index for existing homes hasn’t followed. I see one unintended implication of this: Even the largest homebuilders can rapidly pivot to cheaper starter homes wherever they’re in demand, as soon as such homes are legalized in a jurisdiction. Second, a new CalMatters piece documents that California cities have approved their Regional Housing Needs Allocation (RHNA) housing plans but are building almost nowhere near their targets. “Fair Share”-style housing frameworks like RHNA place a massive implementation burden on localities to proactively plan for growth from scratch, leaving the details wholly under local control. D ecades of zero or weak results in these frameworks are beginning to draw more expert skepticism . State laws (like SB79) that prescriptively modify local zoning by default , subject to a local equivalent plan if a jurisdiction has staff capacity to make such a plan, increasingly look like a promising way to bypass the pain, paperwork, and massive staff time losses to RHNA-like processes. Alex Armlovich Brian Potter">
+  <div class="blurb-meta">
+    <a class="tag" href="/topic/housing-policy/">Housing Policy</a>
+    <span class="date">2026-08-19</span>
+  </div>
+  <h3><a href="/blurb/energy-shortages-transformer-ateel-3/">Building New Homes</a></h3>
+  <p class="excerpt">Brian Potter’s reading list has a good housing subsection this week : First, there’s a striking divergence in existing home price data versus transaction prices at the largest homebuilders: Lennar has cut average selling…</p>
+  <div class="byline">
+    by <a href="/author/alex-armlovich/">Alex Armlovich</a>
+    &middot; on <a href="/writer/brian-potter/">Brian Potter</a>
+    &middot; from <a href="/issue/energy-shortages-transformer-ateel/">Energy shortages, transformer steel, and the meaning of life</a>
+  </div>
+</article>
+
+<article class="blurb-card"
+  data-author="Dylan Matthews"
+  data-topics="Energy|Innovation Policy"
+  data-date="2026-08-19"
+  data-search="America Makes The Wrong Steel For Its Transformer Supply Chain One of my favorite subgenres of business journalism / analysis are articles deeply exploring one particular, hyper-specialized product or resource that turns out to be strangely crucial to the whole economy. A great example is this piece in The Ecomodernist by Ryan Alimento on the production of “grain-oriented electrical steel” (GOES). A specific alloy of iron and silicon, GOES is used to make cores for transformers. Transformers, an essential component in the grid that allow voltage to be adjusted for different types of transmission, are in extreme shortage, with order waiting times stretching to three years or more as the recent surge in electrical demand in the US forces more and more transmission buildout. The US only has one steel plant making GOES, however, and its GOES is generally lower-quality and produces less efficient transformer cores than the GOES from Japanese and Korean mills. To make matters worse, the Trump administration briefly imposed steep tariffs on foreign GOES last year until outcry by the power sector forced it to reverse course. Alimento gives a great breakdown of the problem, and an appealing suggestion for solving it: rather than rely on protectionism and import barriers, offer financing to enable US steel firms to develop new GOES-producing plants. He makes a compelling case that this is one specific area where industrial policy might be highly effective. Dylan Matthews Ryan Alimento">
+  <div class="blurb-meta">
+    <a class="tag" href="/topic/energy/">Energy</a><a class="tag" href="/topic/innovation-policy/">Innovation Policy</a>
+    <span class="date">2026-08-19</span>
+  </div>
+  <h3><a href="/blurb/energy-shortages-transformer-ateel-2/">America Makes The Wrong Steel For Its Transformer Supply Chain</a></h3>
+  <p class="excerpt">One of my favorite subgenres of business journalism / analysis are articles deeply exploring one particular, hyper-specialized product or resource that turns out to be strangely crucial to the whole economy. A great exam…</p>
+  <div class="byline">
+    by <a href="/author/dylan-matthews/">Dylan Matthews</a>
+    &middot; on <a href="/writer/ryan-alimento/">Ryan Alimento</a>
+    &middot; from <a href="/issue/energy-shortages-transformer-ateel/">Energy shortages, transformer steel, and the meaning of life</a>
+  </div>
+</article>
+
+<article class="blurb-card"
+  data-author="Willow Latham-Proenca"
+  data-topics="Energy|International Comparisons"
+  data-date="2026-08-19"
+  data-search="The Growth Effects of Energy Shortages Energy-rich countries may not be all alike, but energy-constrained countries are also often each unhappy in their own way. Taiwo Hassan Odugbemi, Meron Tesfaye and the Energy for Growth Hub break down the monolith of unreliable power supply in Africa, showing how the grid can struggle in a variety of ways with distinct economic consequences. Nigeria is the poster child for grid dysfunction, with chronic outages leaving the grid so unreliable that self-generation (usually with diesel generators) exceeds the total capacity of Nigeria’s grid. Transmission is a big part of the problem, likely a main culprit in keeping nearly 70% of the grid’s theoretical capacity offline. Beyond the direct cost of outages, the cost of buying and maintaining expensive backup generators increases firms’ production costs (potentially to 4x that of industrialized peers), and probably keeps firms that can’t afford the cost out of the market. As the authors flag, the “missing growth” cost here is hard to estimate (although apparently easy to invent ?), but almost certainly in the billions. In Ghana, in addition to outages and self-generation, long-dated power contracts rushed through in response to an energy crisis continue to undermine utilities’ financial stability. South Africa illustrates the continuing economic drag of past energy outages, even after (partial) recovery, with an estimated 1.5% GDP loss in 2023 yet to be recovered. Egypt’s case is perhaps the most interesting analog for the US right now – (barely) sufficient grid capacity and limited self-generation for the moment, but an uncertain grid expansion path when staring down the barrel of rapid demand growth. Willow Latham-Proenca Taiwo Hassan Odugbemi Meron Tesfaye">
+  <div class="blurb-meta">
+    <a class="tag" href="/topic/energy/">Energy</a><a class="tag" href="/topic/international-comparisons/">International Comparisons</a>
+    <span class="date">2026-08-19</span>
+  </div>
+  <h3><a href="/blurb/energy-shortages-transformer-ateel-1/">The Growth Effects of Energy Shortages</a></h3>
+  <p class="excerpt">Energy-rich countries may not be all alike, but energy-constrained countries are also often each unhappy in their own way. Taiwo Hassan Odugbemi, Meron Tesfaye and the Energy for Growth Hub break down the monolith of unr…</p>
+  <div class="byline">
+    by <a href="/author/willow-latham-proenca/">Willow Latham-Proenca</a>
+    &middot; on <a href="/writer/taiwo-hassan-odugbemi/">Taiwo Hassan Odugbemi</a>, <a href="/writer/meron-tesfaye/">Meron Tesfaye</a>
+    &middot; from <a href="/issue/energy-shortages-transformer-ateel/">Energy shortages, transformer steel, and the meaning of life</a>
+  </div>
+</article>
+
+<article class="blurb-card"
+  data-author="Jordan Dworkin"
+  data-topics="AI|Philanthropy &amp; Metascience"
+  data-date="2026-08-13"
+  data-search="AI peer review goes pro Last week Refine announced partnerships with the AEA and the Econometric Society, both of which will now use its AI-assisted technical review in their publication process. The current implementation is narrow, only a “pre-publication audit of technical execution and deposition” to raise issues that would rise to the level of a correction if caught post-publication. At this stage, it’s not being used as an input for deciding what gets published (and Refine’s “overall feedback” is not shown to editors). Zarek Brot, who was in the AEA’s pilot, has a useful thread on the author experience. Predictably, there have been a lot of takes. On the pro side, the arguments I find most compelling are: (a) Peer review has been buckling under its own weight for years, with editors even at top journals struggling to find reviewers. That problem gets much worse if AI drives a substantial increase in submissions, as it seems to be doing. Something’s got to give, and AI is likely to be part of the answer, so I would much rather it be via well-designed and publicly-validated tools than reviewers pasting manuscripts into a chat (note: we covered Refine’s own evaluation a few weeks back, and Paul Litvak has a new AI review eval that I will discuss more in a future post). And (b) There are several subtasks that human reviewers have never been especially good at — like catching math or software errors, checking consistency between tables and text, and verifying that citations accurately represent cited work — but that we’ve fully relied on them for nonetheless. Offloading those subtasks could let reviewers concentrate on the tacit and taste-based components of review, like assessing the novelty of results, their impact on the field, how they fit (or don’t) with existing literature, etc. Peter Hull , Paul Novosad , and Kevin Bryan each proposed related versions of what the future of combined AI and human review could look like. On the con side: (a) At equilibrium, there will need to be ways to avoid creating capture for for-profit companies – i.e. if journals pay subscription fees for AI review on one end, that heavily incentivizes authors planning to submit to those journals to pay for those services up front as well. That is less of an issue for this pilot, where Refine’s use does not affect publication decisions and is being offered to journals for free, but if it ever shifts upstream then this concern would need to be resolved. And (b) There is also a possibility that offloading technical checks could make human reviewers less careful/thorough, which could reduce overall review quality on net. This is something Refine and the journals could formally study, and I hope they do. Overall, props to Ben Golub for his work on Refine, and to the AEA and the Econometric Society – two of the publishers who have also been on the front lines of replication packages and data checks – for being forward-looking and experimental about research evaluation. Thanks for reading The Abundance and Growth Blog! Subscribe for free to receive new posts. Jordan Dworkin Refine">
+  <div class="blurb-meta">
+    <a class="tag" href="/topic/ai/">AI</a><a class="tag" href="/topic/philanthropy-metascience/">Philanthropy &amp; Metascience</a>
+    <span class="date">2026-08-13</span>
+  </div>
+  <h3><a href="/blurb/ai-peer-review-goes-pro-1/">AI peer review goes pro</a></h3>
+  <p class="excerpt">Last week Refine announced partnerships with the AEA and the Econometric Society, both of which will now use its AI-assisted technical review in their publication process. The current implementation is narrow, only a “pr…</p>
+  <div class="byline">
+    by <a href="/author/jordan-dworkin/">Jordan Dworkin</a>
+    &middot; on <a href="/writer/refine/">Refine</a>
+    &middot; from <a href="/issue/ai-peer-review-goes-pro/">AI peer review goes pro</a>
+  </div>
+</article>
+
+<article class="blurb-card"
+  data-author="Alex Armlovich"
+  data-topics="Housing Policy|State Capacity"
+  data-date="2026-08-12"
+  data-search="ROAD Act implementation comes to the states IFP and Pew have a fresh state and local guide to ROAD to Housing implementation, complementing the NAAHL federal guide featured in our July posts . Will Poff-Webster, Alex Horowitz, and coauthors provide at least one sentence on every key provision in the 300+ page ROAD Act that requires or rewards action by states, localities, and tribes. The jurisdictions that move first on zoning, building codes, and permitting will capture the new federal dollars, and the ones that don’t will eventually lose some CDBG funding under the Build Now Act’s conditionality mechanism. The most immediate action item is manufactured housing: states need to certify to HUD that their laws treat chassis and chassis-free homes equally, which means most will need to amend statutory definitions that currently specify a permanent steel chassis. The piece also flags preapproved building plans, single-stair grants, and the HOME program overhaul that finally replaces per-unit cost caps with area-adjusted limits. Pair this with the NAAHL guide for a full introduction to what has to happen next. Thanks for reading The Abundance and Growth Blog! Subscribe for free to receive new posts. Alex Armlovich Will Poff-Webster Alex Horowitz">
+  <div class="blurb-meta">
+    <a class="tag" href="/topic/housing-policy/">Housing Policy</a><a class="tag" href="/topic/state-capacity/">State Capacity</a>
+    <span class="date">2026-08-12</span>
+  </div>
+  <h3><a href="/blurb/europes-scaling-problem-ai-peer-review-5/">ROAD Act implementation comes to the states</a></h3>
+  <p class="excerpt">IFP and Pew have a fresh state and local guide to ROAD to Housing implementation, complementing the NAAHL federal guide featured in our July posts . Will Poff-Webster, Alex Horowitz, and coauthors provide at least one se…</p>
+  <div class="byline">
+    by <a href="/author/alex-armlovich/">Alex Armlovich</a>
+    &middot; on <a href="/writer/will-poff-webster/">Will Poff-Webster</a>, <a href="/writer/alex-horowitz/">Alex Horowitz</a>
+    &middot; from <a href="/issue/europes-scaling-problem-ai-peer-review/">Europe&#39;s scaling problem, AI peer review goes live, and the next pandemic</a>
+  </div>
+</article>
+
+<article class="blurb-card"
+  data-author="Willow Latham-Proenca"
+  data-topics="Energy"
+  data-date="2026-08-12"
+  data-search="PJM’s large load experiment PJM – the country’s largest regional transmission organization by population – recently filed plans for two big steps on large load integration. As covered by Maeve Allsup in Latitude , the plan is two-part. First, PJM will try to procure enough new generation to cover the gap left at its latest capacity auction (where PJM procures enough power to ensure a reliability margin to cover unexpected peaks or outages) through a generator-load matchmaking process and an auction for the remaining shortfall. Second, PJM will require data centers that don’t bring or purchase their own supply to accept “curtailment” requirements – essentially, cutting the power they draw from the grid during emergency conditions. PJM sidestepped the limits of its own authority (and the political fallout) by delegating – states and utilities will be responsible for implementing and enforcing curtailment, as well as the final cost allocation for generation capacity procured through the auction. This is explicitly not a long-term solution – first of all, the capacity procurement is targeting a single year’s 7 GW capacity auction gap, a fraction of the 50-60 GW shortfall PJM itself expects over the next decade (others have widely varying projections here). Second, “matchmaking” pairs generators with the wealthiest suitors (probably the data centers), crowding out access for other types of new load. A long-term version of this type of program could undercut the viability of the capacity market itself, making it harder for cost-sensitive electricity users (like industrial loads ) to come online. Willow Latham-Proenca Maeve Allsup">
+  <div class="blurb-meta">
+    <a class="tag" href="/topic/energy/">Energy</a>
+    <span class="date">2026-08-12</span>
+  </div>
+  <h3><a href="/blurb/europes-scaling-problem-ai-peer-review-4/">PJM’s large load experiment</a></h3>
+  <p class="excerpt">PJM – the country’s largest regional transmission organization by population – recently filed plans for two big steps on large load integration. As covered by Maeve Allsup in Latitude , the plan is two-part. First, PJM w…</p>
+  <div class="byline">
+    by <a href="/author/willow-latham-proenca/">Willow Latham-Proenca</a>
+    &middot; on <a href="/writer/maeve-allsup/">Maeve Allsup</a>
+    &middot; from <a href="/issue/europes-scaling-problem-ai-peer-review/">Europe&#39;s scaling problem, AI peer review goes live, and the next pandemic</a>
+  </div>
+</article>
+
+<article class="blurb-card"
+  data-author="Matt Clancy"
+  data-topics="International Comparisons|Innovation Policy"
+  data-date="2026-08-12"
+  data-search="Europe’s scaling problem In 2008, the total market capitalization of US-listed firms was about a third larger than the market capitalization of European-listed firms. In 2023, it’s about triple. What happened? A new NBER working paper by Becker, Benmelech, and Monteiro tries to answer that, first by ruling out some potential explanations: it’s not a few lucky superstar firms; it’s not driven by differences in the relative size of different sectors; it’s not about how many firms get listed; it’s not about successful European firms re-listing in the states; and so on. Instead, they argue Europe’s smaller market cap is downstream of the fact that successful European firms struggle to scale. Part of the explanation here is about financing. While the difference in the leverage of European and American firms did not change much between 2008 and 2023, the venture capital supply gap widened by a substantial level over the same time period. Since VC money supports new high-growth firms, this difference shows up most acutely there. While the largest European and American firms face similar costs of capital, the terms are much less favorable for small firms in Europe than in America. The other problem is European firms have a harder time tapping into continent-wide markets than American firms do. The size of European firms is more closely related to the size of the national market they are based in, than the size of an American company is to the size of the state-wide market it is based in. The greater integration of American markets means it doesn’t much matter whether a company is based out of Idaho or Texas for its ultimate size, but it does matter in Europe if you’re based in, say, Germany versus Denmark. Matt Clancy Becker Benmelech Monteiro">
+  <div class="blurb-meta">
+    <a class="tag" href="/topic/international-comparisons/">International Comparisons</a><a class="tag" href="/topic/innovation-policy/">Innovation Policy</a>
+    <span class="date">2026-08-12</span>
+  </div>
+  <h3><a href="/blurb/europes-scaling-problem-ai-peer-review-3/">Europe’s scaling problem</a></h3>
+  <p class="excerpt">In 2008, the total market capitalization of US-listed firms was about a third larger than the market capitalization of European-listed firms. In 2023, it’s about triple. What happened? A new NBER working paper by Becker,…</p>
+  <div class="byline">
+    by <a href="/author/matt-clancy/">Matt Clancy</a>
+    &middot; on <a href="/writer/becker/">Becker</a>, <a href="/writer/benmelech/">Benmelech</a>, <a href="/writer/monteiro/">Monteiro</a>
+    &middot; from <a href="/issue/europes-scaling-problem-ai-peer-review/">Europe&#39;s scaling problem, AI peer review goes live, and the next pandemic</a>
+  </div>
+</article>
+
+<article class="blurb-card"
+  data-author="Saloni Dattani"
+  data-topics="Global Health &amp; Pandemics"
+  data-date="2026-08-12"
+  data-search="A keyhole view of the next pandemic I’ve been following the Ebola outbreak in central Africa, which has just surpassed 2,000 reported deaths and 4,381 confirmed cases. (The real numbers are likely higher due to underdetection.) What’s surprising about the Ebola outbreak is that we actually have an Ebola vaccine , but it was developed and tested against the Ebola Zaire virus during the 2014–2016 outbreak, while this outbreak is caused by Ebola Bundibugyo virus. The two viruses have similarities and some laboratory and animal data suggested there may be cross-protection , although the evidence is still unclear. 1 But until last week , the WHO hadn’t decided to test that vaccine in this outbreak; the focus was on developing and testing new Bundibugyo-specific vaccines and antivirals instead. In a recent STAT opinion piece , Krutika Kuppalli and Placide Mbala argue that pandemic preparedness shouldn’t be so narrow. Rather than focusing so narrowly on each virus, we should invest in broad-spectrum diagnostics, vaccines, and treatments, and should have tested the effects of the Zaire vaccine on Bundibugyo earlier; I agree. Interestingly, the Ebola Zaire vaccine came about through innovative trials and coordination. It was developed through funding by BARDA and the DoD, tested using ring vaccination trials led by the WHO, incentivized through an advance market commitment, and stockpiled by Gavi, WHO, UNICEF and the Red Cross for future outbreaks. That stockpile has been useful in the years since then to contain outbreaks of Ebola Zaire quickly. But now that a larger, harder to contain outbreak has arrived, we’ve lost expertise and funding to tackle it, and we don’t know if the existing Ebola vaccine protects against this virus too. We could be doing a lot better. Saloni Dattani Krutika Kuppalli Placide Mbala">
+  <div class="blurb-meta">
+    <a class="tag" href="/topic/global-health-pandemics/">Global Health &amp; Pandemics</a>
+    <span class="date">2026-08-12</span>
+  </div>
+  <h3><a href="/blurb/europes-scaling-problem-ai-peer-review-2/">A keyhole view of the next pandemic</a></h3>
+  <p class="excerpt">I’ve been following the Ebola outbreak in central Africa, which has just surpassed 2,000 reported deaths and 4,381 confirmed cases. (The real numbers are likely higher due to underdetection.) What’s surprising about the …</p>
+  <div class="byline">
+    by <a href="/author/saloni-dattani/">Saloni Dattani</a>
+    &middot; on <a href="/writer/krutika-kuppalli/">Krutika Kuppalli</a>, <a href="/writer/placide-mbala/">Placide Mbala</a>
+    &middot; from <a href="/issue/europes-scaling-problem-ai-peer-review/">Europe&#39;s scaling problem, AI peer review goes live, and the next pandemic</a>
+  </div>
+</article>
+
+<article class="blurb-card"
+  data-author="Dylan Matthews"
+  data-topics="Clinical Trials|International Comparisons"
+  data-date="2026-08-12"
+  data-search="China tightens the reins on clinical trials One of the big biotech stories of the 2020s has been the rise of China. A recent survey of industry leaders found broad agreement that the US now lags behind China in clinical development of new drugs, and two years ago China oversaw more clinical trials than the US for the first time. This has led a lot of observers, like Congress’s National Security Commission on Emerging Biotechnology , to urge emulation of some of China’s regulatory approaches to drug development, like letting investigators initiate phase I trials without needing regulator approval first. But Stat’s Brian Yang reports that China may be moving in the opposite direction, toward stricter regulation. Essentially, two deaths in gene therapy trials, and the bungled attempt by their investigators to cover up the deaths, pushed the Chinese government last October to advance Order 818. The order represents an across-the-board tightening of Chinese trial regulation. Now, investigator-initiated trials are restricted to the highest-ranked subset of hospitals, limited to certain types of drug designs, and required to meet “good manufacturing practices” standards akin to those the FDA requires of commercially available drugs in the US. Yang finds that the rules may already be slowing down the famously fast-paced Chinese biotech center: “Since May, the China National Center for Biotechnology Development, an organization under the National Health Commission, has approved 80 or so [investigator-initiated] projects, but a STAT tally showed nearly all of them were retroactive registrations of work that had already been underway, and all of them are testing cell therapies. Only one is genuinely new.” Dylan Matthews Brian Yang">
+  <div class="blurb-meta">
+    <a class="tag" href="/topic/clinical-trials/">Clinical Trials</a><a class="tag" href="/topic/international-comparisons/">International Comparisons</a>
+    <span class="date">2026-08-12</span>
+  </div>
+  <h3><a href="/blurb/europes-scaling-problem-ai-peer-review-1/">China tightens the reins on clinical trials</a></h3>
+  <p class="excerpt">One of the big biotech stories of the 2020s has been the rise of China. A recent survey of industry leaders found broad agreement that the US now lags behind China in clinical development of new drugs, and two years ago …</p>
+  <div class="byline">
+    by <a href="/author/dylan-matthews/">Dylan Matthews</a>
+    &middot; on <a href="/writer/brian-yang/">Brian Yang</a>
+    &middot; from <a href="/issue/europes-scaling-problem-ai-peer-review/">Europe&#39;s scaling problem, AI peer review goes live, and the next pandemic</a>
+  </div>
+</article>
 
 <article class="blurb-card"
   data-author="Jordan Dworkin"

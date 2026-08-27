@@ -700,5 +700,83 @@
     "subtitle": "Meet the folks writing this blog",
     "label": "other",
     "stats": {}
+  },
+  {
+    "slug": "cancer-vaccines-what-german-unification",
+    "title": "Cancer vaccines, what German unification can teach us about housing and innovation, and more",
+    "post_date": "2026-08-26T11:03:00+00:00",
+    "canonical_url": "https://www.abundanceandgrowth.org/p/cancer-vaccines-what-german-unification",
+    "subtitle": "What we\u2019re reading, August 26, 2026",
+    "label": "roundup_era3",
+    "stats": {
+      "h4_count": 5,
+      "era3_hits": 4,
+      "li_count": 4,
+      "era2_hits": 4
+    }
+  },
+  {
+    "slug": "ai-for-science-what-can-it-do-can",
+    "title": "AI for science: What can it do? Can it do things? Let\u2019s find out!",
+    "post_date": "2026-08-20T11:04:17+00:00",
+    "canonical_url": "https://www.abundanceandgrowth.org/p/ai-for-science-what-can-it-do-can",
+    "subtitle": "A what we\u2019re reading spotlight",
+    "label": "spotlight",
+    "stats": {}
+  },
+  {
+    "slug": "energy-shortages-transformer-ateel",
+    "title": "Energy shortages, transformer steel, and the meaning of life",
+    "post_date": "2026-08-19T11:03:29+00:00",
+    "canonical_url": "https://www.abundanceandgrowth.org/p/energy-shortages-transformer-ateel",
+    "subtitle": "What we\u2019re reading, August 19, 2026",
+    "label": "roundup_era3",
+    "stats": {
+      "h4_count": 5,
+      "era3_hits": 4,
+      "li_count": 4,
+      "era2_hits": 4
+    }
+  },
+  {
+    "slug": "saloni-ted-talk",
+    "title": "Thanks for coming to my TED talk",
+    "post_date": "2026-08-17T15:35:36+00:00",
+    "canonical_url": "https://www.abundanceandgrowth.org/p/saloni-ted-talk",
+    "subtitle": "Saloni's TED talk on medical innovation was published today.",
+    "label": "other",
+    "stats": {}
+  },
+  {
+    "slug": "transit-oriented-development-is-a",
+    "title": "Transit-Oriented Development is a surprisingly underrated path to ending America\u2019s housing problems",
+    "post_date": "2026-08-14T14:55:10+00:00",
+    "canonical_url": "https://www.abundanceandgrowth.org/p/transit-oriented-development-is-a",
+    "subtitle": "America\u2019s rail systems are still recovering from 2020, and robot cars are coming. Legalize apartments first.",
+    "label": "other",
+    "stats": {}
+  },
+  {
+    "slug": "ai-peer-review-goes-pro",
+    "title": "AI peer review goes pro",
+    "post_date": "2026-08-13T11:04:29+00:00",
+    "canonical_url": "https://www.abundanceandgrowth.org/p/ai-peer-review-goes-pro",
+    "subtitle": "A what we're reading spotlight",
+    "label": "spotlight",
+    "stats": {}
+  },
+  {
+    "slug": "europes-scaling-problem-ai-peer-review",
+    "title": "Europe's scaling problem, AI peer review goes live, and the next pandemic",
+    "post_date": "2026-08-12T11:03:13+00:00",
+    "canonical_url": "https://www.abundanceandgrowth.org/p/europes-scaling-problem-ai-peer-review",
+    "subtitle": "What we\u2019re reading, August 12, 2026",
+    "label": "roundup_era3",
+    "stats": {
+      "h4_count": 6,
+      "era3_hits": 5,
+      "li_count": 5,
+      "era2_hits": 5
+    }
   }
 ]
