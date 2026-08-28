@@ -29,9 +29,32 @@ topic, and cross-link navigation.
 
 ```
 source venv/bin/activate
+pip install -r requirements.txt -r requirements-embeddings.txt
 python scripts/build_site.py
 cd site && python -m http.server 8765
 ```
+
+Dependencies are split in two: `requirements.txt` (required -- fetching,
+parsing, rendering) and `requirements-embeddings.txt` (`sentence-transformers`/
+torch, a large, occasionally-flaky-to-install dependency used only for the
+"related blurbs" feature). `scripts/compute_embeddings.py` and
+`scripts/build_related.py` catch their own failure if the latter isn't
+installed and skip gracefully rather than blocking the rest of the
+pipeline -- getting new content published matters more than that one
+nice-to-have. See `scripts/ingest_step2.py`.
+
+## Weekly ingestion
+
+`scripts/ingest_step1.py` (fetch + classify + parse new posts, list what
+needs enrichment) and `scripts/ingest_step2.py` (merge enrichment +
+consolidate tags + embeddings + rebuild site) are the two halves of the
+routine, with an LLM doing the tagging/title-generation reasoning in
+between -- see the prompt on the "Abundance and Growth archive: weekly
+ingestion" scheduled routine at claude.ai/code/routines for the exact
+step-by-step instructions given to it each run. Both scripts are
+idempotent/incremental: safe to re-run anytime, never overwrite
+already-parsed or already-enriched blurbs (so manual corrections stick
+permanently), safe to run after a previous run partially failed.
 
 ## Data model
 
