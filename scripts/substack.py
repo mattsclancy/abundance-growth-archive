@@ -18,11 +18,15 @@ PRELOADS_RE = re.compile(
 def extract_post(html):
     """Return the clean `post` dict (title, post_date, body_html, ...)."""
     m = PRELOADS_RE.search(html)
-    if not m:
+    if m:
+        inner_json_text = json.loads('"' + m.group(1) + '"')
+        return json.loads(inner_json_text)["post"]
+    # Newer Substack pages (from ~Sep 2026) put the same payload in a
+    # <script id="preloads-json" type="application/json"> tag instead.
+    tag = BeautifulSoup(html, "html.parser").find("script", id="preloads-json")
+    if tag is None or not tag.string:
         raise ValueError("could not find window._preloads blob in page")
-    inner_json_text = json.loads('"' + m.group(1) + '"')
-    preloads = json.loads(inner_json_text)
-    return preloads["post"]
+    return json.loads(tag.string)["post"]
 
 
 TRAILING_EM_RE = re.compile(r"<em>(.{2,80}?)</em>(\s*</[a-zA-Z0-9]+>)*\s*$", re.S)
